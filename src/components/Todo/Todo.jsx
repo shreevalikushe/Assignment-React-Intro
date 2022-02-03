@@ -6,12 +6,21 @@ export const Todo = () => {
   const [text, setText] = useState("");
   const handleAdd = () => {
     let payload = {
+      id: text.length,
       title: text,
       status: false,
     };
+    console.log(payload);
     setTodo([...todo, payload]);
   };
-  const handleToggle = () => {};
+  const handleToggle = (id) => {
+    let statusChange = todo.map((item) =>
+      item.id === id ? { ...item, status: !item.status } : item
+    );
+    //item.id === id ? { ...item, status: !item.status } : item
+    setTodo(statusChange);
+  };
+  console.log(todo);
   return (
     <div>
       <h1>Basic Todo Application</h1>
@@ -26,7 +35,7 @@ export const Todo = () => {
       </div>
       <h2>List of Tasks</h2>
       {todo.map((item, i) => (
-        <TodoList key={i} {...item} />
+        <TodoList key={i} {...item} handleToggle={handleToggle} />
       ))}
     </div>
   );
