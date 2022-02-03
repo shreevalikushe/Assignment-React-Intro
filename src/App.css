@@ -8,3 +8,17 @@ body {
 .btn {
   margin: 1rem;
 }
+.todoDiv {
+  width: 500px;
+  margin: auto;
+  /* border: brown 1px solid; */
+  padding: 1rem;
+}
+
+.todoListDiv {
+  border: #655d8a 1px solid;
+  padding: 0.5rem;
+  width: 400px;
+  margin: auto;
+  margin-top: 1rem;
+}
